@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.lrm.data.DimTestRun" table="DIM_TEST_RUN"
+		schema="SingleUserPerformanceTest">
+		<id name="runId" type="java.lang.Integer">
+			<column name="RUN_ID" precision="38" scale="0" />
+			<generator class="sequence">
+				<param name="sequence">seq_dim_test_run</param>
+			</generator>
+		</id>
+		<property name="startTime" type="java.sql.Timestamp">
+			<column name="START_TIME" />
+		</property>
+
+		<property name="endTime" type="java.sql.Timestamp">
+			<column name="END_TIME" />
+		</property>
+
+		<!--建立set属性，也可以建立list和持久化类中一致就行 -->
+<!-- 		<set name="fctTestResults"> -->
+<!-- 			<key> -->
+<!-- 				这里的列是指fctTestResults表中的RUN_ID -->
+<!-- 				<column name="RUN_ID" precision="38" scale="0" /> -->
+<!-- 			</key> -->
+			<!-- 通过class属性指定set的属性 -->
+<!-- 			<one-to-many class="com.lrm.data.FctTestResult" /> -->
+<!-- 		</set> -->
+
+	</class>
+</hibernate-mapping>

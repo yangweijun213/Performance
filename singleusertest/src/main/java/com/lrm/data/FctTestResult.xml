@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.lrm.data.FctTestResult" table="FCT_TEST_RESULT"
+		schema="SingleUserPerformanceTest">
+		<id name="resultId" type="java.lang.Integer">
+			<column name="RESULT_ID" precision="38" scale="0" />
+			<generator class="sequence">
+				<param name="sequence">seq_fct_test_result</param>
+			</generator>
+		</id>
+		<property name="userActionTime" type="java.sql.Timestamp">
+			<column name="USER_ACTION_TIME" />
+		</property>
+		<property name="domReadyTime" type="java.sql.Timestamp">
+			<column name="DOM_READY_TIME" />
+		</property>
+
+		<property name="transactionId" type="java.lang.Integer">
+			<column name="TRANSACTION_ID" precision="38" scale="0" />
+		</property>
+
+		<property name="runId" type="java.lang.Integer">
+			<column name="RUN_ID" precision="38" scale="0" />
+		</property>
+
+	</class>
+</hibernate-mapping>
